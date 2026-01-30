@@ -83,8 +83,8 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           }`}
           style={{ transitionDelay: "750ms" }}
         >
-          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Скачать игру
+          <MagneticButton size="lg" variant="primary" onClick={() => window.open('https://vk.com/clubholyarearu', '_blank')}>
+            VK Сообщество
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
             Смотреть трейлер

@@ -244,8 +244,8 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Начать
+        <MagneticButton variant="secondary" onClick={() => window.open('https://vk.com/clubholyarearu', '_blank')}>
+          VK Сообщество
         </MagneticButton>
       </nav>
 
@@ -279,9 +279,9 @@ export default function Index() {
               <MagneticButton
                 size="lg"
                 variant="primary"
-                onClick={() => scrollToSection(4)}
+                onClick={() => window.open('https://vk.com/clubholyarearu', '_blank')}
               >
-                Скачать игру
+                VK Сообщество
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
                 Смотреть трейлер

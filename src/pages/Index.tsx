@@ -178,34 +178,13 @@ export default function Index() {
         className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
         style={{ contain: "strict" }}
       >
-        <Shader className="h-full w-full">
-          <Swirl
-            colorA="#1a1a2e"
-            colorB="#efd3a5"
-            speed={0.5}
-            detail={0.9}
-            blend={60}
-            coarseX={30}
-            coarseY={30}
-            mediumX={50}
-            mediumY={50}
-            fineX={60}
-            fineY={60}
-          />
-          <ChromaFlow
-            baseColor="#2d1b4e"
-            upColor="#f5e6d3"
-            downColor="#1a1a2e"
-            leftColor="#d4af37"
-            rightColor="#4a148c"
-            intensity={1.0}
-            radius={2.0}
-            momentum={20}
-            maskType="alpha"
-            opacity={0.95}
-          />
-        </Shader>
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-transparent to-amber-900/30" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: "url('https://cdn.poehali.dev/projects/abb14437-247f-465b-91c5-4fdf27f18b27/files/4cd050f8-2531-4bbd-b476-a4eeb787c7f3.jpg')"
+          }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <nav

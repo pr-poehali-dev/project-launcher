@@ -1,7 +1,7 @@
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
-import { ServicesSection } from "@/components/sections/services-section"
+import { GuidesSection } from "@/components/sections/guides-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
@@ -203,7 +203,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Особенности", "О мире"].map((item, index) => (
+          {["Главная", "Гайды", "О мире"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -272,7 +272,7 @@ export default function Index() {
           </div>
         </section>
 
-        <ServicesSection />
+        <GuidesSection />
         <AboutSection scrollToSection={scrollToSection} />
       </div>
 

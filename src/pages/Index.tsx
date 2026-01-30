@@ -283,9 +283,6 @@ export default function Index() {
               >
                 VK Сообщество
               </MagneticButton>
-              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
-                Смотреть трейлер
-              </MagneticButton>
             </div>
           </div>
 

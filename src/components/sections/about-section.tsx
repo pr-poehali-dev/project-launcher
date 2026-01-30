@@ -86,9 +86,6 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           <MagneticButton size="lg" variant="primary" onClick={() => window.open('https://vk.com/clubholyarearu', '_blank')}>
             VK Сообщество
           </MagneticButton>
-          <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            Смотреть трейлер
-          </MagneticButton>
         </div>
       </div>
     </section>

@@ -1,10 +1,8 @@
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
-import { WorkSection } from "@/components/sections/work-section"
 import { ServicesSection } from "@/components/sections/services-section"
 import { AboutSection } from "@/components/sections/about-section"
-import { ContactSection } from "@/components/sections/contact-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
 
@@ -77,7 +75,7 @@ export default function Index() {
       const deltaX = touchStartX.current - touchEndX
 
       if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
-        if (deltaY > 0 && currentSection < 4) {
+        if (deltaY > 0 && currentSection < 2) {
           scrollToSection(currentSection + 1)
         } else if (deltaY < 0 && currentSection > 0) {
           scrollToSection(currentSection - 1)
@@ -147,7 +145,7 @@ export default function Index() {
         const scrollLeft = scrollContainerRef.current.scrollLeft
         const newSection = Math.round(scrollLeft / sectionWidth)
 
-        if (newSection !== currentSection && newSection >= 0 && newSection <= 4) {
+        if (newSection !== currentSection && newSection >= 0 && newSection <= 2) {
           setCurrentSection(newSection)
         }
 
@@ -226,7 +224,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Игра", "Особенности", "О мире", "Скачать"].map((item, index) => (
+          {["Главная", "Особенности", "О мире"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -257,7 +255,6 @@ export default function Index() {
         }`}
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {/* Hero Section */}
         <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
@@ -296,17 +293,22 @@ export default function Index() {
           </div>
         </section>
 
-        <WorkSection />
         <ServicesSection />
         <AboutSection scrollToSection={scrollToSection} />
-        <ContactSection />
       </div>
 
-      <style>{`
-        div::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+      <div className="fixed bottom-6 right-6 z-50 flex gap-2">
+        {[0, 1, 2].map((index) => (
+          <button
+            key={index}
+            onClick={() => scrollToSection(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              currentSection === index ? "w-8 bg-foreground" : "w-2 bg-foreground/30 hover:bg-foreground/50"
+            }`}
+            aria-label={`Перейти к разделу ${index + 1}`}
+          />
+        ))}
+      </div>
     </main>
   )
 }
